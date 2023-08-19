@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "748047383146",
+    "project_id": "noteapp-f2cad",
+    "storage_bucket": "noteapp-f2cad.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:748047383146:android:46c90fb2f3a7e34b7fa813",
+        "android_client_info": {
+          "package_name": "com.example.noteapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "748047383146-4oc29ntcuce5ajs9rkroo76mqe5rfcjg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBkAg7yItrOLjbaPHeu3HVi-vxvTQxkeSs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "748047383146-4oc29ntcuce5ajs9rkroo76mqe5rfcjg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
