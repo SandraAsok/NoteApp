@@ -10,11 +10,9 @@ class NoteReaderScreen extends StatefulWidget {
   const NoteReaderScreen({
     super.key,
     required this.doc,
-    required this.index,
   });
 
   final QueryDocumentSnapshot doc;
-  final int index;
 
   @override
   State<NoteReaderScreen> createState() => _NoteReaderScreenState();
@@ -25,20 +23,20 @@ class _NoteReaderScreenState extends State<NoteReaderScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: cardscolor[widget.index],
+        backgroundColor: Colors.green.shade300,
         appBar: AppBar(
-          backgroundColor: cardscolor[widget.index],
+          backgroundColor: Colors.green.shade300,
           leading: const Icon(Icons.navigate_before, color: Colors.black),
           actions: [
             IconButton(
                 onPressed: () {
-                  Navigator.of(context)
-                      .push(CupertinoPageRoute(builder: (context) {
-                    return EditNote(
-                        id: widget.doc.id,
-                        title: widget.doc['title'],
-                        content: widget.doc['content']);
-                  }));
+                  Navigator.push(
+                      context,
+                      CupertinoPageRoute(
+                          builder: (context) => EditNote(
+                              id: widget.doc.id,
+                              title: widget.doc['title'],
+                              content: widget.doc['content'])));
                 },
                 icon: const Icon(Icons.edit, color: Colors.black)),
             IconButton(

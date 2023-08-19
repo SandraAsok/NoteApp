@@ -54,8 +54,8 @@ class _HomeScreenState extends State<HomeScreen> {
                           return noteCard(
                             () {
                               Navigator.of(context).push(CupertinoPageRoute(
-                                  builder: (context) => NoteReaderScreen(
-                                      doc: docs[index], index: index)));
+                                  builder: (context) =>
+                                      NoteReaderScreen(doc: docs[index])));
                             },
                             docs[index],
                             index,

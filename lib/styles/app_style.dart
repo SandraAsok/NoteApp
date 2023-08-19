@@ -7,13 +7,6 @@ SizedBox kheight10 = const SizedBox(height: 10);
 Color maincolor = Colors.yellow.shade300;
 Color appbarcolor = Colors.orangeAccent.shade200;
 
-List<Color> cardscolor = [
-  Colors.pink.shade200,
-  Colors.red.shade300,
-  Colors.green.shade300,
-  Colors.blue.shade300,
-];
-
 TextStyle appbarstyle = GoogleFonts.abel(
     fontSize: 25, fontWeight: FontWeight.bold, color: Colors.black);
 

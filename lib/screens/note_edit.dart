@@ -25,15 +25,15 @@ class EditNote extends StatefulWidget {
 }
 
 class _EditNoteState extends State<EditNote> {
-  TextEditingController titleController = TextEditingController();
-  TextEditingController contentController = TextEditingController();
+  TextEditingController edittitleController = TextEditingController();
+  TextEditingController editcontentController = TextEditingController();
   late String date;
 
   @override
   void initState() {
     super.initState();
-    titleController.text = widget.title;
-    contentController.text = widget.content;
+    edittitleController.text = widget.title;
+    editcontentController.text = widget.content;
     date = DateTime.now().toString();
   }
 
@@ -53,7 +53,7 @@ class _EditNoteState extends State<EditNote> {
             children: [
               TextField(
                 style: normalstyle,
-                controller: titleController,
+                controller: edittitleController,
                 decoration: const InputDecoration(
                   hintText: "Enter Note Title",
                 ),
@@ -64,7 +64,7 @@ class _EditNoteState extends State<EditNote> {
               Expanded(
                 child: TextField(
                   style: normalstyle,
-                  controller: contentController,
+                  controller: editcontentController,
                   maxLines: null,
                   decoration: const InputDecoration(
                     hintText: "Enter content",
@@ -75,10 +75,14 @@ class _EditNoteState extends State<EditNote> {
           ),
         ),
         floatingActionButton: FloatingActionButton(
+          backgroundColor: appbarcolor,
           onPressed: () {
             updateNote();
           },
-          child: const Icon(Icons.save),
+          child: const Icon(
+            Icons.save,
+            color: Colors.black,
+          ),
         ),
       ),
     );
@@ -86,9 +90,9 @@ class _EditNoteState extends State<EditNote> {
 
   void updateNote() {
     FirebaseFirestore.instance.collection('notes').doc(widget.id).update({
-      'title': titleController.text,
+      'title': edittitleController.text,
       'date': date,
-      'content': contentController.text,
+      'content': editcontentController.text,
     }).then((_) {
       log("Note updated");
       Navigator.of(context).pushReplacement(
